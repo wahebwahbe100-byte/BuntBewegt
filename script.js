@@ -163,11 +163,7 @@
       if (heroDescription) heroDescription.textContent = slide.dataset.description || '';
       if (heroEyebrow) heroEyebrow.textContent = slide.dataset.eyebrow || '';
       if (heroNote) {
-        const spark = document.createElement('span');
-        spark.className = 'tiny-spark';
-        spark.setAttribute('aria-hidden', 'true');
-        spark.textContent = '✳';
-        heroNote.replaceChildren(spark, document.createTextNode(' ' + (slide.dataset.note || '')));
+        heroNote.textContent = slide.dataset.note || '';
       }
       if (heroCtaLabel) heroCtaLabel.textContent = slide.dataset.cta || 'Unsere Angebote entdecken';
       if (heroCta) heroCta.href = slide.dataset.href || '#angebote';
@@ -254,7 +250,7 @@
     const preview = document.createElement('div');
     preview.className = 'message-preview';
     preview.hidden = true;
-    preview.innerHTML = '<h3 tabindex="-1">Eure Nachricht ist vorbereitet.</h3><p>Kopiert den Text und sendet ihn als Nachricht an BuntBewegt auf Instagram. Bisher wurde nichts gesendet.</p><label for="prepared-message" class="sr-only">Vorbereitete Nachricht</label><textarea id="prepared-message" readonly></textarea><div class="message-actions"><button class="button button-green copy-message" type="button">Nachricht kopieren</button><a class="button button-yellow instagram-message" target="_blank" rel="noopener noreferrer">Auf Instagram schreiben ↗</a></div><p class="message-copy-status" role="status" aria-live="polite"></p><button class="message-edit" type="button">Nachricht bearbeiten</button>';
+    preview.innerHTML = '<h3 tabindex="-1">Eure Nachricht ist vorbereitet.</h3><p>Kopiert den Text und sendet ihn als Nachricht an BuntBewegt auf Instagram. Bisher wurde nichts gesendet.</p><label for="prepared-message" class="sr-only">Vorbereitete Nachricht</label><textarea id="prepared-message" readonly></textarea><div class="message-actions"><button class="button button-green copy-message" type="button">Nachricht kopieren</button><a class="button button-yellow instagram-message" target="_blank" rel="noopener noreferrer">Auf Instagram schreiben</a></div><p class="message-copy-status" role="status" aria-live="polite"></p><button class="message-edit" type="button">Nachricht bearbeiten</button>';
     preview.querySelector('.instagram-message').href = profile;
     form.insertAdjacentElement('afterend', preview);
     const text = preview.querySelector('textarea');
