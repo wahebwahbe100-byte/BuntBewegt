@@ -300,7 +300,7 @@
 
 
   // Photo preview overlay: show the full photo without leaving the page.
-  // Works for galleries on the homepage, "Unsere Wirkung", and Angebot pages.
+  // Works for galleries on the homepage, "News & Events", and Angebot pages.
   const imageLinks = [...document.querySelectorAll('a[data-photo-lightbox]')];
   if (imageLinks.length) {
     const viewer = document.createElement('dialog');
@@ -387,12 +387,17 @@
     });
   });
 
-  // Offer selection carries through to the existing message composer.
+  // Offer and team enquiries carry through to the existing message composer.
   const interest = document.querySelector('[data-contact-composer] select[name="interest"]');
   if (interest) {
     const offerIds = { workshops:'angebot-01', projektwochen:'angebot-02', kindergeburtstage:'angebot-03', 'musical-theater':'angebot-04', mitmachzirkus:'angebot-05', teambuilding:'angebot-06', 'yoga-entspannung':'angebot-07', 'upcycling-kreatives':'angebot-08', wissenschaft:'angebot-09', kinderschminken:'angebot-10', 'events-feste':'angebot-11' };
-    const requested = new URLSearchParams(window.location.search).get('angebot');
-    if (Object.prototype.hasOwnProperty.call(offerIds, requested)) interest.value = offerIds[requested];
+    const params = new URLSearchParams(window.location.search);
+    const requested = params.get('angebot');
+    if (params.get('anliegen') === 'buntbewegt-team') {
+      interest.value = 'buntbewegt-team';
+    } else if (Object.prototype.hasOwnProperty.call(offerIds, requested)) {
+      interest.value = offerIds[requested];
+    }
   }
 
   // Short, once-only reveals; no content is hidden unless an observer is ready.

@@ -58,7 +58,7 @@ body{overflow-wrap:break-word}
 .offer-card,.all-angebot-card{scroll-margin-top:calc(var(--header-height) + 24px)}
 
 /* A quiet editorial gallery: real moments, generous space, no heavy card frames. */
-#wirkung.impact-section{padding:80px 0 72px}
+#news-events.impact-section{padding:80px 0 72px}
 .impact-heading{display:grid;grid-template-columns:1fr 1.05fr;gap:70px;align-items:end;margin-bottom:38px}
 .brand-kicker{display:flex;align-items:center;gap:12px;font-size:10px;letter-spacing:2.3px;color:#4e705a}
 .brand-points{display:flex;gap:3px;align-items:center}
@@ -196,7 +196,7 @@ body{overflow-wrap:break-word}
   .offers-view-all{margin-top:34px;gap:11px}.offers-view-all .offers-view-all-button{width:100%;max-width:340px;font-size:14px;min-height:60px;gap:14px;padding-left:20px}.offers-view-all-text{flex:1}
   .offers-view-all-note{font-size:11px}
   .offer-filters{gap:7px}.offer-filters button{font-size:11px;padding-inline:13px;min-height:42px}
-  #wirkung.impact-section{padding:60px 0 54px}.impact-heading{grid-template-columns:1fr;gap:19px;margin-bottom:30px}.impact-heading h2{font-size:35px}.impact-intro{font-size:14px;line-height:1.85;max-width:490px}.brand-kicker{margin-bottom:13px}
+  #news-events.impact-section{padding:60px 0 54px}.impact-heading{grid-template-columns:1fr;gap:19px;margin-bottom:30px}.impact-heading h2{font-size:35px}.impact-intro{font-size:14px;line-height:1.85;max-width:490px}.brand-kicker{margin-bottom:13px}
   .impact-gallery{grid-template-columns:1fr;gap:33px}.impact-photo{aspect-ratio:4/3;border-radius:18px}.impact-gallery figcaption{padding:19px 2px 0}.impact-gallery h3{font-size:24px;max-width:none;margin:8px 0}.impact-gallery figcaption p{max-width:460px;font-size:14px}.impact-label{font-size:9px}
   .impact-bottom{grid-template-columns:1fr;gap:13px;margin-top:32px;padding-top:23px}.impact-bottom>p{font-size:12px}.impact-bottom ul{gap:9px 15px}.impact-bottom li{font-size:11px}
   .join-steps{padding:48px 0 60px}.join-steps-heading{padding-left:3px;margin-bottom:31px}.join-steps-heading h2{font-size:29px;max-width:300px;line-height:1.2}.join-steps-heading .eyebrow{font-size:8px;letter-spacing:1.4px}.join-spark{left:auto;right:5px;top:20px;transform:rotate(25deg)}
