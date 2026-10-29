@@ -6,20 +6,21 @@
 <meta name="description" content="Kontakt zu BuntBewegt: Fragen zu Workshops, Kindergeburtstagen, Projekten und gemeinsamer Kreativität? Erzählt uns von eurer Idee."/>
 <meta name="theme-color" content="#21623f"/>
 <title>Kontakt | BuntBewegt – Gemeinsam Ideen bewegen</title>
+<script>if (location.hash === "#kontakt" && !matchMedia("(prefers-reduced-motion: reduce)").matches) document.documentElement.classList.add("kontakt-smooth-arrival");</script>
 <link rel="icon" type="image/svg+xml" href="images/favicon.svg"/>
-<link rel="stylesheet" href="style.css"/>
-<link rel="stylesheet" href="kontakt.css"/>
-<script src="script.js?v=content-20261026-1" defer></script>
+<link rel="stylesheet" href="style.css?v=kontakt-20261029"/>
+<link rel="stylesheet" href="kontakt.css?v=kontakt-20261029"/>
+<script src="script.js?v=kontakt-20261029" defer></script>
 <link href="refinements.css?v=content-20261026-1" rel="stylesheet"/>
 <link href="hero-text-soft.css?v=1" rel="stylesheet"/>
 <link rel="stylesheet" href="bunt-motion-only.css?v=2"/>
 <script defer src="bunt-motion-only.js?v=2"></script>
 <link href="hero-section-blend.css?v=1" rel="stylesheet"/>
-</head>
+<link rel="stylesheet" href="events-nav.css?v=netzwerk-20261029-1"></head>
 <body><div class="site" id="page-top">
 <a class="skip-link" href="#main">Zum Inhalt</a>
 <header class="site-header"><div class="container header-inner">
-<a aria-label="BuntBewegt — Start" class="brand" href="index.html"><img src="images/logo-buntbewegt-neu.png" alt="BuntBewegt – Bewegung. Kreativität. Gemeinschaft." width="1711" height="884" decoding="async" /></a><nav aria-label="Hauptnavigation" class="main-nav" id="main-navigation"><a href="index.html">Startseite</a><a class="" href="angebote.html">Angebote</a><a class="" href="ueber-buntbewegt.html">Über uns</a><a aria-current="page" class="active" href="kontakt.html">Kontakt</a></nav><div class="header-actions">
+<a aria-label="BuntBewegt — Start" class="brand" href="index.html"><img src="images/logo-buntbewegt-neu.png" alt="BuntBewegt – Bewegung. Kreativität. Gemeinschaft." width="1711" height="884" decoding="async" /></a><nav aria-label="Hauptnavigation" class="main-nav" id="main-navigation"><a href="index.html">Startseite</a><a class="" href="angebote.html">Angebote</a><a href="news-events.html#main">News &amp; Events</a><a href="netzwerk.html">Netzwerk</a><a class="" href="ueber-buntbewegt.html">Über uns</a><a aria-current="page" class="active" href="#kontakt">Kontakt</a></nav><div class="header-actions">
 <a class="button button-green header-join" href="kontakt.html">Mitmachen<svg aria-hidden="true" class="lucide lucide-arrow-right" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a><button aria-controls="main-navigation" aria-expanded="false" aria-label="Menü öffnen" class="menu-toggle" type="button"><span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span></button>
 </div>
 </div></header>
@@ -32,7 +33,7 @@
   </div>
   <picture class="kontakt-art-picture"><img src="images/kontakt-hero-illustration.svg" alt="Bunter Briefumschlag mit Herz – gemeinsam Ideen austauschen" width="1000" height="600" fetchpriority="high" decoding="async" /></picture>
 </section>
-<section aria-labelledby="contact-title" class="contact kontakt-form-section" id="kontakt">
+<section aria-labelledby="contact-title" class="contact kontakt-form-section" id="kontakt-section">
 <span aria-hidden="true" class="kontakt-bg-shape kontakt-bg-top-left"></span>
 <span aria-hidden="true" class="kontakt-bg-shape kontakt-bg-top-right"></span>
 <span aria-hidden="true" class="kontakt-bg-shape kontakt-bg-bottom-left"></span>
@@ -45,7 +46,7 @@
 <span aria-hidden="true" class="kontakt-doodle kontakt-doodle-path-right"></span>
 <span aria-hidden="true" class="kontakt-leaf-cluster kontakt-leaf-cluster-right">❦</span>
 <span aria-hidden="true" class="kontakt-leaf-cluster kontakt-leaf-cluster-bottom">❦</span>
-<div class="container contact-grid">
+<div class="container contact-grid" id="kontakt">
 <div class="contact-copy title-wrap">
 <span aria-hidden="true" class="sprinkles"><i></i><i></i><i></i></span><p class="eyebrow">DER ERSTE SCHRITT IST EIN HALLO</p>
 <h1 id="contact-title">Schreibt uns eure Idee.</h1>
@@ -58,7 +59,7 @@
 <div class="form-row">
 <label for="contact-name">Euer Name<input autocomplete="name" id="contact-name" maxlength="100" minlength="2" name="name" placeholder="Wie dürfen wir euch nennen?" required=""/></label><label for="contact-email">E-Mail-Adresse<input autocomplete="email" id="contact-email" maxlength="254" name="email" placeholder="hallo@beispiel.de" required="" type="email"/></label>
 </div>
-<label for="contact-interest">Dafür interessieren wir uns<span class="select-wrap"><select id="contact-interest" name="interest"><option selected="" value="general">Allgemeine Anfrage</option><option value="buntbewegt-team">BuntBewegt Team</option><option value="angebot-01">Workshops</option><option value="angebot-02">Projektwochen</option><option value="angebot-03">Kindergeburtstage</option><option value="angebot-04">Musical &amp; Theater</option><option value="angebot-05">Mitmachzirkus</option><option value="angebot-06">Teambuilding</option><option value="angebot-07">Yoga &amp; Entspannung</option><option value="angebot-08">Upcycling &amp; Kreatives</option><option value="angebot-09">Wissenschaft</option><option value="angebot-10">Kinderschminken</option><option value="angebot-11">Events &amp; Feste</option></select><svg aria-hidden="true" class="lucide lucide-chevron-down" fill="none" height="17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17" xmlns="http://www.w3.org/2000/svg"><path d="m6 9 6 6 6-6"></path></svg></span></label><label for="contact-message">Eure Nachricht<textarea id="contact-message" maxlength="4000" minlength="10" name="message" placeholder="Erzählt uns von eurer Idee oder stellt eure Fragen …" required="" rows="4"></textarea></label><div aria-hidden="true" class="honeypot"><label for="website">Website<input autocomplete="off" id="website" name="website" tabindex="-1"/></label></div>
+<label for="contact-interest">Dafür interessieren wir uns<span class="select-wrap"><select id="contact-interest" name="interest"><option selected="" value="general">Allgemeine Anfrage</option><option value="kooperation">Zusammenarbeit / Kooperation</option><option value="buntbewegt-team">BuntBewegt Team</option><option value="angebot-01">Workshops</option><option value="angebot-02">Projektwochen</option><option value="angebot-03">Kindergeburtstage</option><option value="angebot-04">Musical &amp; Theater</option><option value="angebot-05">Mitmachzirkus</option><option value="angebot-06">Teambuilding</option><option value="angebot-07">Yoga &amp; Entspannung</option><option value="angebot-08">Upcycling &amp; Kreatives</option><option value="angebot-09">Wissenschaft</option><option value="angebot-10">Kinderschminken</option><option value="angebot-11">Events &amp; Feste</option></select><svg aria-hidden="true" class="lucide lucide-chevron-down" fill="none" height="17" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="17" xmlns="http://www.w3.org/2000/svg"><path d="m6 9 6 6 6-6"></path></svg></span></label><label for="contact-message">Eure Nachricht<textarea id="contact-message" maxlength="4000" minlength="10" name="message" placeholder="Erzählt uns von eurer Idee oder stellt eure Fragen …" required="" rows="4"></textarea></label><div aria-hidden="true" class="honeypot"><label for="website">Website<input autocomplete="off" id="website" name="website" tabindex="-1"/></label></div>
 <label class="consent" for="contact-consent"><input id="contact-consent" name="consent" required="" type="checkbox"/><span>Ich habe die <a class="inline-link" href="datenschutz.html">Datenschutzhinweise</a> gelesen.</span></label><button class="button button-green submit-button" type="submit">Nachricht vorbereiten<svg aria-hidden="true" class="lucide lucide-arrow-right" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button><p class="form-note">Nachricht vorbereiten, kopieren und selbst über Instagram senden.</p>
 </fieldset></form>
 <p class="static-contact-note">Ihr erreicht uns auch direkt auf <a href="https://www.instagram.com/buntbewegt.de/" rel="noopener noreferrer" target="_blank">Instagram · @buntbewegt.de</a>.</p>
@@ -103,9 +104,10 @@
       </nav>
       <nav class="footer-column" aria-label="BuntBewegt im Fußbereich">
         <h2>BuntBewegt</h2>
-        <a href="index.html#news-events">News und Events</a>
+        <a href="news-events.html">News und Events</a><a href="bilder-material.html">Bilder &amp; Material</a>
         <a href="index.html">Startseite</a>
         <a href="ueber-buntbewegt.html">Über uns</a>
+        <a href="netzwerk.html">Netzwerk</a>
         <a href="angebote.html">Angebote</a>
         <a href="kontakt.html">Kontakt</a>
       </nav>

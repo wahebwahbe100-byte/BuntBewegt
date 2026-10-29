@@ -4,6 +4,20 @@
   const profile = 'https://www.instagram.com/buntbewegt.de/';
   try { localStorage.removeItem('buntbewegt-language'); } catch (_) {}
 
+  // Smooth Kontakt navigation: the destination #kontakt is placed on the
+  // form grid, so visitors arrive with the form just below the sticky header.
+  // Native anchors and normal links remain usable without JavaScript.
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.main-nav a[href="kontakt.html#kontakt"]').forEach(link => {
+      link.addEventListener('click', event => {
+        if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        document.documentElement.classList.add('kontakt-smooth-leaving');
+        window.setTimeout(() => { window.location.assign(link.href); }, 160);
+      });
+    });
+  }
+
   // Accessible mobile navigation with a reversible, animated menu button.
   const menuButton = document.querySelector('.menu-toggle');
   const navigation = document.querySelector('#main-navigation');
@@ -328,7 +342,7 @@
       if (!source) return;
       opener = link;
       // Use only the site's own gallery asset, never an external Instagram URL.
-      photo.src = source.getAttribute('src');
+      photo.src = link.getAttribute('href') || source.getAttribute('src');
       photo.alt = source.alt || 'BuntBewegt Foto';
       previousOverflow = document.body.style.overflow;
       document.body.style.overflow = 'hidden';
@@ -387,13 +401,15 @@
     });
   });
 
-  // Offer and team enquiries carry through to the existing message composer.
+  // Offer, team and cooperation enquiries carry through to the existing message composer.
   const interest = document.querySelector('[data-contact-composer] select[name="interest"]');
   if (interest) {
     const offerIds = { workshops:'angebot-01', projektwochen:'angebot-02', kindergeburtstage:'angebot-03', 'musical-theater':'angebot-04', mitmachzirkus:'angebot-05', teambuilding:'angebot-06', 'yoga-entspannung':'angebot-07', 'upcycling-kreatives':'angebot-08', wissenschaft:'angebot-09', kinderschminken:'angebot-10', 'events-feste':'angebot-11' };
     const params = new URLSearchParams(window.location.search);
     const requested = params.get('angebot');
-    if (params.get('anliegen') === 'buntbewegt-team') {
+    if (params.get('anliegen') === 'kooperation') {
+      interest.value = 'kooperation';
+    } else if (params.get('anliegen') === 'buntbewegt-team') {
       interest.value = 'buntbewegt-team';
     } else if (Object.prototype.hasOwnProperty.call(offerIds, requested)) {
       interest.value = offerIds[requested];

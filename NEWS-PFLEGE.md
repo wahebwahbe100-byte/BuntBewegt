@@ -1,26 +1,46 @@
-# News und Events pflegen
+# News, Bilder und Eventmaterial pflegen
 
-Die Startseite und „Über uns“ enthalten einen Bereich „News und Events“.
-Aktuell zeigen beide dieselben drei allgemeinen Einblicke mit den bereits vorhandenen Fotos.
-Neue Termine und Rückblicke können direkt in den HTML-Dateien eingetragen werden.
+## Seiten und Inhalte
 
-## Einen Beitrag ergänzen
+- `news-events.html`: gestaltete Übersicht mit dem Kieler Lichtermeer, zwei KTV-Adler-Terminen, einer Bildvorschau und sechs weiteren Geschichten.
+- `event-*.html`: sieben vollständige Artikel aus dem bereitgestellten Dokument. Die Zwischenüberschriften, Originaltexte und Inhaltsverzeichnisse bleiben erhalten.
+- `bilder-material.html`: vollständige Sammlung der 13 bereitgestellten Bilder. Ohne JavaScript sind alle Bilder sichtbar und über die Bildlinks erreichbar. Mit JavaScript lassen sich die drei Themenbereiche filtern.
+- `event-kieler-lichtermeer-2026.html#material`: alle neun Motive und Laternenanleitungen zum Lichtermeer.
+- `angebote.html#event-material`: alle vier Event-Flyer, mit der breiten Stationsübersicht und drei Hochformatflyern.
+- `index.html` und `ueber-buntbewegt.html`: identische Vorschau mit Lichterzauber-Motiv, aktuellem Rückblick und bebildertem Zugang zur vollständigen Sammlung.
 
-1. Das passende Foto im Ordner `images/` ablegen, möglichst als WebP mit kurzem Dateinamen ohne Leerzeichen.
-2. In `index.html` den Kommentar `NEWS-BEGIN` suchen. Eine vollständige vorhandene `<figure>…</figure>`-Karte kopieren und vor die erste Karte setzen.
-3. Bildpfad in `href` und `src`, Bildbeschreibung in `alt` und `aria-label`, Überschrift und Text ersetzen. Bei einem Foto mit anderen Abmessungen auch `width` und `height` anpassen.
-4. Das Label `EINBLICK` durch `ANKÜNDIGUNG` oder `RÜCKBLICK` ersetzen. Datum und Ort im Text ergänzen, sobald sie feststehen. Ein Datum kann mit `<time datetime="JJJJ-MM-TT">Datum in lesbarer Form</time>` ausgezeichnet werden; dabei die Platzhalter durch das echte Datum ersetzen.
-5. In `ueber-buntbewegt.html` beim Kommentar `NEWS-BEGIN` dieselben Inhalte in einer `<article class="ab-impact-card">…</article>`-Karte ergänzen.
-6. Die beiden aktualisierten HTML-Dateien und das neue Foto auf die bestehende Website laden. Anschließend beide Seiten im Browser prüfen.
+## Die 13 Bilder
 
-Die Klassen der kopierten Karte beibehalten, damit Darstellung und Bildvergrößerung funktionieren.
-Neue Beiträge oben einfügen. Für eine kompakte Übersicht können ältere Karten entfernt werden.
-Beim Entfernen einer Karte nicht die umgebende Galerie oder die Kommentare löschen.
+Lichterwelt (3): Lichterzauber, Laternenwerkstatt, Laternenauswahl.
 
-## Originalfotos einsetzen
+Bastelanleitungen (6): Papierlaterne, Fliegenpilz, PET-Flasche, Einmachglas, Papier-Häuschen, Milchkarton.
 
-Das nachgereichte Hochformatfoto ist in `index.html` im Bereich `id="ueber-uns"` als `images/familien-aktion.jpg` eingebunden. Das Bild bleibt vollständig sichtbar. Bei einem späteren Austausch Bildpfad, Alternativtext sowie tatsächliche Breite und Höhe anpassen; bei anderen Proportionen zusätzlich `aspect-ratio` in `.about-family-photo .about-photo-wrap` aktualisieren.
+Event-Flyer (4): Stationsübersicht im Querformat, Stationen im Hochformat, Stationspakete, besondere Extras.
 
-Für das Teamfoto in `ueber-buntbewegt.html` im Bereich `id="team"` das Logo innerhalb von `class="ab-team-visual"` ersetzen. Ein passender Alternativtext beschreibt das echte Teamfoto. Für eine flächige Fotodarstellung kann in `content-updates.css` die Regel `.ab-team-visual img` auf die tatsächlichen Bildproportionen angepasst werden; `height: auto` erhält das vollständige Foto.
+Alle PNG-Dateien in `downloads/events/` sind unveränderte Originale. Die Dateien in `images/events/` sind optimierte WebP-Versionen und Vorschauen. Bilder werden vollständig dargestellt, ohne Bildteile abzuschneiden. Originale und Anleitungen wurden nicht inhaltlich retuschiert.
 
-Das Teamfoto steht noch aus. Das Markenmotiv kann bis zu seinem Eingang bestehen bleiben.
+## Gestaltung und Interaktion
+
+- `events.css`: Layout für die neuen Seiten, Artikel, Materialien und Startseitenvorschauen. Die Klassen beginnen mit `j-`.
+- `events.js`: Galerie-Filter sowie Dialog mit Bildnavigation, Leseansicht, Original-Link und Download. In der Leseansicht wird das Bild in Originalbreite angezeigt und lässt sich horizontal und vertikal scrollen. Escape schließt den Dialog und der Fokus kehrt zum auslösenden Bildlink zurück.
+- `events-nav.css`: Platz für den zusätzlichen Eintrag „News & Events“ im vorhandenen Menü. Das bestehende mobile Menü bleibt erhalten.
+
+## Inhalte aktualisieren
+
+1. Artikel in der zugehörigen `event-*.html` bearbeiten. Titel, Meta-Beschreibung, Einführung, Datum und Inhaltsnavigation mitführen.
+2. Die Kurzfassung in `news-events.html` aktualisieren. Die Sammlung bleibt in `bilder-material.html`.
+3. Vorschauen in Startseite und „Über uns“ zwischen `NEWS-BEGIN` und `NEWS-END` synchron halten.
+4. Beim Ersetzen eines Bildes alle Vorkommen sowie `src`, `srcset`, `width`, `height`, Alternativtext, Originalpfad und `data-preview` aktualisieren.
+5. `data-event-image` öffnet die Großansicht; `data-gallery` ordnet Vorschaugruppen zu. `data-material-group` bezeichnet die Filterbereiche `lichterwelt`, `anleitungen` und `flyer`.
+
+Termine stammen aus dem bereitgestellten Artikel und sind manuell gepflegt: 1. November 2026 von 13–18 Uhr sowie KTV Adler am 22. November 2026 und 7. Februar 2027. Nach dem Ereignis Ankündigungen bei Bedarf in Rückblicke ändern. Keine Uhrzeiten oder Orte ergänzen, die noch nicht bestätigt sind.
+
+## Übertragen und prüfen
+
+Den kompletten Inhalt dieses Ordners einschließlich aller Unterordner auf die statische Hosting-Umgebung übertragen. Kein Build-Schritt und keine zusätzlichen Bibliotheken erforderlich.
+
+Auf Desktop und Mobilgerät prüfen: News-Vorschau, alle 13 Bilder, Filter, Leseansicht, Bildwechsel, Escape, Downloads, Inhaltslinks und Hauptnavigation. Bei Änderungen die Versionskennungen der CSS- und JavaScript-Dateien erhöhen.
+
+Die lokalen Referenzen, Bilddateien und Vollständigkeit der Artikel wurden geprüft. Die verwaltete Browser-Vorschau war in dieser Sitzung nicht verfügbar; die tatsächliche Darstellung und Interaktion im Browser bleiben daher zu prüfen.
+
+Unter den Bildern werden keine Downloadzeile und keine Dateigrößen mehr angezeigt. Der Download in der geöffneten Großansicht bleibt verfügbar.

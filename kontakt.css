@@ -477,3 +477,16 @@
 .kontakt-page .kontakt-outro-transition .kontakt-outro::before {
   display: none;
 }
+
+/* Kontakt navigation lands directly on the form beneath the sticky header.
+   The site-wide scroll-padding takes care of its header offset. */
+#kontakt { scroll-margin-top: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .kontakt-smooth-arrival .kontakt-page {
+    animation: kontakt-smooth-arrive 360ms ease-out both;
+  }
+  @keyframes kontakt-smooth-arrive {
+    from { opacity: .38; }
+    to { opacity: 1; }
+  }
+}
